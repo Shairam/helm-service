@@ -24,7 +24,7 @@ spec:
         imagePullPolicy: "IfNotPresent"
         ports:
         - containerPort: 8090
-          name: {{ .Values.appName }}-port
+          name: {{ .Values.appName }}
           protocol: TCP
         resources:
           limits:
