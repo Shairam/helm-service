@@ -33,6 +33,4 @@ spec:
           requests:
             cpu: 64m
             memory: 128Mi
-#      imagePullSecrets:
-#- name: {{ .Values.imagePullSecret }}
 
