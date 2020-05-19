@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: {{ .Values.appLabelValue }}
-  name: {{ .Values.appName }}
+    app: isurulucky-myorg-myapp1
+  name: isurulucky-myorg-myapp1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.appLabelValue }}
+      app: isurulucky-myorg-myapp1
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -17,14 +17,14 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.appLabelValue }}
+        app: isurulucky-myorg-myapp1
     spec:
       containers:
-      - image: {{ .Values.image }}
+      - image: isurulucky-myorg-myapp1
         imagePullPolicy: "IfNotPresent"
         ports:
         - containerPort: 8090
-          name: {{ .Values.appName }}
+          name: isurulucky-myorg-myapp1
           protocol: TCP
         resources:
           limits:
