@@ -1,15 +1,14 @@
-apiVersion: v1
-kind: Service
+apiVersion: "v1"
+kind: "Service"
 metadata:
   labels:
-    app: isurulucky-myorg-myapp1
-  name: isurulucky-myorg-myapp1
+    choreo: "isurulucky-integration1"
+  name: "isurulucky-integration1"
 spec:
   ports:
-  - name: isurulucky-myorg-myapp1
-    port: 8090
-    protocol: TCP
-    targetPort: 8090
+  - name: "http-helloworldep-svc"
+    port: 9090
+    protocol: "TCP"
+    targetPort: 9090
   selector:
-    app: isurulucky-myorg-myapp1
-
+    choreo: "isurulucky-integration1"
