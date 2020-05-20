@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: isurulucky-myorg-myapp1
-  name: isurulucky-myorg-myapp1
+    app: {{ .Values.appName }}
+  name: {{ .Values.appName }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: isurulucky-myorg-myapp1
+      app: {{ .Values.appName }}
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       labels:
-        app: isurulucky-myorg-myapp1
+        app: {{ .Values.appName }}
     spec:
       containers:
       - name: app-container
