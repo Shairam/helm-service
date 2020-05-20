@@ -20,12 +20,12 @@ spec:
         app: isurulucky-myorg-myapp1
     spec:
       containers:
-      - name: isurulucky-myorg-myapp1
+      - name: app-container
         image: {{ .Values.image }}
         imagePullPolicy: "IfNotPresent"
         ports:
         - containerPort: 8090
-          name: isurulucky-myorg-myapp1
+          name: app-port
           protocol: TCP
         resources:
           limits:
