@@ -1,1 +1,1 @@
-# service-template
+# Helm templates for services
