@@ -27,11 +27,3 @@ spec:
         - containerPort: 8090
           name: app-port
           protocol: TCP
-        resources:
-          limits:
-            cpu: 64m
-            memory: 128Mi
-          requests:
-            cpu: 64m
-            memory: 128Mi
-
