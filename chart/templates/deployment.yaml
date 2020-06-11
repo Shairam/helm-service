@@ -3,12 +3,14 @@ kind: Deployment
 metadata:
   labels:
     app: {{ .Values.appName }}
+    appId: "{{ .Values.appId }}"
   name: {{ .Values.appName }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: {{ .Values.appName }}
+      appId: "{{ .Values.appId }}"
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,6 +20,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.appName }}
+        appId: "{{ .Values.appId }}"
     spec:
       containers:
       - name: app-container
