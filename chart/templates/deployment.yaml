@@ -4,6 +4,7 @@ metadata:
   labels:
     app: {{ .Values.appName }}
     appId: "{{ .Values.appId }}"
+    envId: "{{ .Values.envId }}"
   name: {{ .Values.appName }}
 spec:
   replicas: 1
@@ -11,6 +12,7 @@ spec:
     matchLabels:
       app: {{ .Values.appName }}
       appId: "{{ .Values.appId }}"
+      envId: "{{ .Values.envId }}"
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -21,6 +23,7 @@ spec:
       labels:
         app: {{ .Values.appName }}
         appId: "{{ .Values.appId }}"
+        envId: "{{ .Values.envId }}"
     spec:
       containers:
       - name: app-container
